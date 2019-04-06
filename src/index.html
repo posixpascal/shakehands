@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generation Shake Hands | seek and play youtube videos with your hands</title>
+    <!-- vendors -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.4.8/plyr.css">
+    <script src="https://cdn.plyr.io/3.4.8/plyr.polyfilled.js"></script>
+    <!-- custom -->
+    <link rel="stylesheet" href="styles/reboot.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+<div class="loader hidden">
+    <div class="logo">shakehands</div>
+    <div class="loader-text">Loading...</div>
+</div>
+<div class="container">
+    <video style="display: none;" id="video"></video>
+    <div class="mirror">
+        <canvas id="canvas" class="mirror"></canvas>
+        <span class="mirror-frame">Shake your hands</span>
+    </div>
+
+    <div class="fader">
+        <span class="label">VOLUME</span>
+        <div class="bar">
+            <div class="bar-inner"></div>
+            <div class="bar-current"></div>
+        </div>
+    </div>
+
+    <div class="video-select">
+        <input type="text" class="input" placeholder="Youtube URL" id="urlinput">
+    </div>
+    <video id="youtube"></video>
+</div>
+<script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+</body>
+</html>

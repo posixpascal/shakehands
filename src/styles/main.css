@@ -1,0 +1,116 @@
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 64px;
+}
+
+
+.loader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, .8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    height: 100vh;
+    z-index: 20;
+    opacity: 1;
+    transition: ease-in-out 0.3s;
+}
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-text {
+    color: #007bff;
+}
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.input {
+    display: block;
+    width: calc(100% - 80px);
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 30px;
+    border: 1px solid lightblue;
+    margin: 0 40px 40px;
+}
+
+.mirror {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+
+.mirror canvas {
+    width: 160px;
+    height: 120px;
+}
+
+.mirror-frame {
+    background: #000;
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+
+/** fader **/
+.fader {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.fader .label {
+    position: absolute;
+    font-size: 12px;
+
+    display: block;
+    transform: rotate(-90deg);
+    margin-top: 40px;
+    margin-left: 5px;
+}
+
+.fader .bar {
+    height: 100px;
+    width: 20px;
+    position: relative;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.fader .bar-inner, .fader .bar-current {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(20px - 2px);
+}
+
+.fader .bar-inner {
+    background: #ccc;
+    transition: height linear 0.5s;
+}
+
+.fader .bar-current {
+    background: red;
+    transition: height linear 1s;
+}
